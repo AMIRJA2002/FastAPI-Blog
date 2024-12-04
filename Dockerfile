@@ -15,7 +15,7 @@ RUN wget https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for
     chmod +x wait-for-it.sh
 
 # Make sure the database is up before running alembic migrations
-RUN ./wait-for-it.sh db:5432 --timeout=60 -- alembic upgrade head
+RUN ./wait-for-it.sh postgres:5432 --timeout=60 -- alembic upgrade head
 
 RUN alembic upgrade head
 
