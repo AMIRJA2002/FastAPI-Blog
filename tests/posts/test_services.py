@@ -1,13 +1,15 @@
 from core.post.models import Post, Comment
-from core.post.schemas import AddComment
+from core.post.schemas import AddComment, CreateUpdatePost
 from fastapi import HTTPException
+
+from core.users.models import User
 from tests.test_database import *
 from faker import Faker
 from core.post.services import (
     edit_post_service,
     delete_post_service,
     add_comment_service,
-    comments_list_service
+    comments_list_service, create_post_service
 )
 
 fake = Faker()
