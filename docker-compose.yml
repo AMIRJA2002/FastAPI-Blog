@@ -1,0 +1,30 @@
+services:
+
+  fastapi:
+    build: .
+    ports:
+      - "7070:8080"
+    networks:
+      - db_network
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: always
+
+  postgres:
+    image: postgres
+    networks:
+      - db_network
+    container_name: blog_db
+    restart: always
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "6000:5432"
+
+networks:
+  db_network:
+    driver: bridge
