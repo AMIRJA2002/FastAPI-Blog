@@ -40,7 +40,3 @@ jobs:
         echo "$SSH_KEY" > key.pem
         chmod 600 key.pem
         ssh -o StrictHostKeyChecking=no -i key.pem root@91.107.167.15 "bash /home/amir_projects/blog/deploy.sh"
-
-
-
-
