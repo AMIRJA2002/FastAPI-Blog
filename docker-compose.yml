@@ -19,6 +19,8 @@ services:
       - "7070:8080"
     networks:
       - db_network
+    depends_on:
+      - postgres
     volumes:
       - .:/app
     environment:
