@@ -52,6 +52,7 @@ docker compose up --build # docker-compose up --build for older version
 127.0.0.1:7070/docs 
 ```
 
+---
 
 ## How to deploy
 Move project file to server:
@@ -59,7 +60,7 @@ Move project file to server:
 - spin up project's docker
 - requests are served on port 7070.
 
-
+---
 
 ## project structure
 
