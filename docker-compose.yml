@@ -1,17 +1,5 @@
 services:
 
-  fastapi:
-    build: .
-    ports:
-      - "7070:8080"
-    networks:
-      - db_network
-    volumes:
-      - .:/app
-    environment:
-      - PYTHONUNBUFFERED=1
-    restart: always
-
   postgres:
     image: postgres
     networks:
@@ -24,6 +12,19 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
     ports:
       - "6000:5432"
+
+  fastapi:
+    build: .
+    ports:
+      - "7070:8080"
+    networks:
+      - db_network
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: always
+
 
 networks:
   db_network:
