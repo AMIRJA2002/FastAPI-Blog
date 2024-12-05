@@ -12,6 +12,7 @@ This project is a **FastAPI-based Blog API** designed for managing blog posts, u
 - Database migrations using Alembic
 - Easy deployment with Docker and Docker Compose
 - Environment variable configuration for secure setup
+- CI/CD pipeline setup using GitHub Actions for automated deployment and testing
 - Comprehensive testing suite
 
 ---
@@ -64,23 +65,26 @@ Move project file to server:
 
 ## project structure
 
-```bash
-data-co-lab_blog_api/
+```bashdata-co-lab_blog_api/
 │
 ├── app.py                 # Main application file
 ├── core/                  # Core application logic
-    ├── init.py
-    ├── users              # users code base and logic
-    ├── post               # posts code base and logic 
+|    └── init.py
+|    └── users             # users code base and logic
+|    └── post              # posts code base and logic 
 ├── config.py              # Application configuration
-├── datebase.py            # Database initialization
+├── database.py            # Database initialization
 ├── dependencies.py        # Dependency management
 ├── alembic/               # Database migrations
 ├── tests/                 # Test suite
 ├── Dockerfile             # Docker configuration
 ├── docker-compose.yml     # Docker Compose configuration
 ├── requirements.txt       # Python dependencies
-└── .env                   # Environment variables (excluded in version control)
+├── .env                   # Environment variables (excluded in version control)
+├── .github/               # GitHub Actions workflow configuration
+│   └── workflows/
+│       └── ci-cd.yml      # GitHub Actions CI/CD pipeline configuration
+
 ```
 
 
